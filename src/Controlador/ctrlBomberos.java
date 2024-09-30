@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.Bomberos;
 import Vista.frmBomberos;
+import Vista.frmPrimeraVista;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
@@ -21,6 +22,7 @@ public class ctrlBomberos implements MouseListener {
         Vista.btnEliminar.addMouseListener(this);
         Vista.btnActualizar.addMouseListener(this);
         Vista.jtbBomberos.addMouseListener(this);
+        Vista.txtSalir2.addMouseListener(this);
         Modelo.mostrar(Vista.jtbBomberos);
 
         
@@ -29,6 +31,13 @@ public class ctrlBomberos implements MouseListener {
     
     @Override
     public void mouseClicked(MouseEvent e) {
+        
+        if (e.getSource() == Vista.txtSalir2) {
+                frmPrimeraVista salir = new frmPrimeraVista();
+                salir.setVisible(true);
+            
+            Vista.dispose();
+        }    
         
         if (e.getSource() == Vista.btnAgregar) {
               try {
