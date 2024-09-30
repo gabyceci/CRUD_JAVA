@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import Controlador.ctrlBomberos;
 import Modelo.Bomberos;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -30,6 +31,8 @@ public class frmBomberos extends javax.swing.JFrame {
         
         frmBomberos Vista = this;
         Bomberos Modelo = new Bomberos();
+        ctrlBomberos Controlador = new ctrlBomberos(Modelo, Vista);
+
     }
     
      //Icono 
@@ -52,7 +55,7 @@ public class frmBomberos extends javax.swing.JFrame {
         panelRound2 = new Vista.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtbBomberos = new javax.swing.JTable();
         panelRound3 = new Vista.PanelRound();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -80,8 +83,8 @@ public class frmBomberos extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jLabel1.setText("Salir");
 
-        jTable1.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtbBomberos.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
+        jtbBomberos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -92,7 +95,7 @@ public class frmBomberos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtbBomberos);
 
         panelRound3.setBackground(new java.awt.Color(255, 255, 255));
         panelRound3.setRoundBottomLeft(80);
@@ -326,7 +329,7 @@ public class frmBomberos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jtbBomberos;
     private Vista.PanelRound panelRound1;
     private Vista.PanelRound panelRound2;
     private Vista.PanelRound panelRound3;
