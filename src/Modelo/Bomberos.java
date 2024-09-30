@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
 import Vista.frmBomberos;
@@ -14,10 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Latitude E5470
- */
+
 public class Bomberos {
     
     private String UUID_Bombero;
@@ -185,7 +178,7 @@ public class Bomberos {
         
     }
     
-    public void limpiarCampos(frmBomberos Vista){
+     public void limpiarCampos(frmBomberos Vista){
          
          Vista.txtNombre.setText("");
          Vista.txtEdad.setText("");

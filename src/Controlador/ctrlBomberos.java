@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controlador;
 
 import Modelo.Bomberos;
@@ -10,10 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Latitude E5470
- */
+
 public class ctrlBomberos implements MouseListener {
     
     private Bomberos Modelo;
@@ -46,7 +39,8 @@ public class ctrlBomberos implements MouseListener {
 
                 Modelo.insertar();
                 Modelo.mostrar(Vista.jtbBomberos); 
-                Modelo.limpiarCampos(Vista); 
+                Modelo.limpiarCampos(Vista);
+
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Error al agregar bombero " + ex.getMessage());
             }
@@ -55,7 +49,6 @@ public class ctrlBomberos implements MouseListener {
         if (e.getSource() == Vista.btnEliminar) {
             Modelo.eliminar(Vista.jtbBomberos);
             Modelo.mostrar(Vista.jtbBomberos);
-            Modelo.limpiarCampos(Vista);
         }
         
         if (e.getSource() == Vista.btnActualizar) {
@@ -68,6 +61,7 @@ public class ctrlBomberos implements MouseListener {
                 Modelo.actualizar(Vista.jtbBomberos);
                 Modelo.mostrar(Vista.jtbBomberos);
                 Modelo.limpiarCampos(Vista);
+
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Error al actualizar bombero " + ex.getMessage());
             }
