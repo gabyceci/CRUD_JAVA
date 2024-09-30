@@ -41,6 +41,35 @@ public class ctrlBomberos implements MouseListener {
         
         if (e.getSource() == Vista.btnAgregar) {
               try {
+                  if (Vista.txtNombre.getText().isEmpty() || Vista.txtEdad.getText().isEmpty() || 
+                        Vista.txtPeso.getText().isEmpty() || Vista.txtCorreo.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Por favor ingrese todos los campos");
+                        return;
+                    }
+
+                    if (!Vista.txtNombre.getText().matches("[a-zA-Z ]+")) {
+                        JOptionPane.showMessageDialog(null, "Ingrese solamente letras");
+                        return;
+                    }
+
+                    try {
+                        Integer.parseInt(Vista.txtEdad.getText());
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "La edad solo debe contener números");
+                        return;
+                    }
+
+                    try {
+                        Double.parseDouble(Vista.txtPeso.getText());
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "El peso debe contener solo números");
+                        return;
+                    }
+
+                    if (!Vista.txtCorreo.getText().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+                        JOptionPane.showMessageDialog(null, "El correo no tiene un formato válido");
+                        return;
+                    }
                 Modelo.setNombre_Bombero(Vista.txtNombre.getText());
                 Modelo.setEdad_Bombero(Integer.parseInt(Vista.txtEdad.getText()));
                 Modelo.setPeso_Bombero(Double.parseDouble(Vista.txtPeso.getText()));
@@ -62,6 +91,35 @@ public class ctrlBomberos implements MouseListener {
         
         if (e.getSource() == Vista.btnActualizar) {
             try {
+                if (Vista.txtNombre.getText().isEmpty() || Vista.txtEdad.getText().isEmpty() || 
+                        Vista.txtPeso.getText().isEmpty() || Vista.txtCorreo.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Por favor ingrese todos los campos");
+                        return;
+                    }
+
+                    if (!Vista.txtNombre.getText().matches("[a-zA-Z ]+")) {
+                        JOptionPane.showMessageDialog(null, "Ingrese solamente letras");
+                        return;
+                    }
+
+                    try {
+                        Integer.parseInt(Vista.txtEdad.getText());
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "La edad solo debe contener números");
+                        return;
+                    }
+
+                    try {
+                        Double.parseDouble(Vista.txtPeso.getText());
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "El peso debe contener solo números");
+                        return;
+                    }
+
+                    if (!Vista.txtCorreo.getText().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+                        JOptionPane.showMessageDialog(null, "El correo no tiene un formato válido");
+                        return;
+                    }
                 Modelo.setNombre_Bombero(Vista.txtNombre.getText());
                 Modelo.setEdad_Bombero(Integer.parseInt(Vista.txtEdad.getText()));
                 Modelo.setPeso_Bombero(Double.parseDouble(Vista.txtPeso.getText()));
