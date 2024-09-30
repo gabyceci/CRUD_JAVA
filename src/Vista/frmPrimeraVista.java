@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Latitude E5470
@@ -15,6 +19,20 @@ public class frmPrimeraVista extends javax.swing.JFrame {
      */
     public frmPrimeraVista() {
         initComponents();
+        
+        //Mandar a llamar el icono
+        setIconImage(getIconImage());
+        
+        // Configurar el JFrame para que se inicie maximizado
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    
+     //Icono
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Img/bombero.png"));
+        return retValue;
     }
 
     /**
@@ -32,11 +50,11 @@ public class frmPrimeraVista extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 960, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 548, Short.MAX_VALUE)
         );
 
         pack();
